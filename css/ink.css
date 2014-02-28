@@ -1237,11 +1237,11 @@ body {
   font-family: Times, "Times New Roman", serif;
 }
 a {
-  color: #0069d6;
+  color: #4a9b17;
   text-decoration: none;
 }
 a:hover {
-  color: #007ed5;
+  color: #006700;
   text-decoration: underline;
 }
 /* Headings  */
@@ -7055,10 +7055,15 @@ table.ink-table.bordered tr td:first-child {
 }
 .ink-tabs.top .tabs-nav li a {
   margin-right: .4em;
+  font-weight: bold;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+.ink-tabs.top .tabs-nav li a:hover,
+.ink-tabs.top .tabs-nav li a:active {
+  text-decoration: none;
 }
 .ink-tabs.top .tabs-nav li.active {
   margin: 0 0 -2px 0;
