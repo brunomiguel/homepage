@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/ink.css">
+    <style type="text/css">
+        img {max-width: 128px !important;}
+        .titulo {margin-bottom: 1em; text-align: left; text-transform: uppercase;}
+        .roundcorners {border-radius: 100%;}
+    </style>
+</head>
+
+<body>
+    <script src="js/ink-all.js"></script>
+
+    <div class="ink-grid">
+        <br>
+        <br>
+        <h3>Homepage</h3>
+        <br>
+        <br>
+    </div>
+
+    <div class="ink-grid">
+        <form class="ink-form" method="get" action="https://www.google.com/search">
+            <fieldset>
+                <div class="control-group control">
+                    <input type="text" name="q" size="33%" maxlength="255" value="" placeholder="Pesquisar no Google..." />
+                    <input type="submit" value="Pesquisar" class="ink-button" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="ink-grid">
+        <div class="ink-tabs top">
+            <!-- Creates a tabbed view with top nav -->
+            <ul class="tabs-nav">
+                <li>
+                    <a href="#item1">Comunicação</a>
+                </li>
+                <!-- Points to item 1 below -->
+                <li>
+                    <a href="#item2">ToDo</a>
+                </li>
+                <!-- Points to item 2 below -->
+                <li>
+                    <a href="#item3">Informação</a>
+                </li>
+                <!-- Points to item 3 below -->
+            </ul>
+            <div id="item1" class="tabs-content">
+                <!-- Item 1 -->
+                <div class="column-group gutters space push-center content-center">
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://gmail.com">
+                            <img src="imgs/gmail.png" alt="gmail" data-tip-text="Aceder ao Gmail" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://facebook.com">
+                            <img src="imgs/facebook.png" alt="facebook" data-tip-text="Aceder ao Facebook" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://tweetdeck.twitter.com">
+                            <img src="imgs/twitter.png" alt="twitter" data-tip-text="Aceder ao Tweetdeck" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://plus.google.com">
+                            <img src="imgs/gplus.png" alt="gplus" data-tip-text="Aceder ao Google Plus" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="item2" class="tabs-content">
+                <!-- Item 2 -->
+                <div class="column-group gutters space push-center content-center">
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://getpocket.com">
+                            <img src="imgs/pocket.png" alt="Pocket" data-tip-text="Aceder ao Pocket" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://springpad.com">
+                            <img class="roundcorners" src="imgs/springpad.png" alt="Springpad" data-tip-text="Aceder ao Springpad" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://calendar.google.com">
+                            <img src="imgs/calendar.png" alt="Google Calendar" data-tip-text="Aceder ao Google Calendar" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="item3" class="tabs-content">
+                <!-- Item 3 -->
+                <div class="column-group gutters space push-center content-center">
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://digg.com">
+                            <img src="imgs/digg.png" alt="digg" data-tip-text="Aceder ao Digg" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://ttrss.brunomiguel.net">
+                            <img src="imgs/rss.png" alt="rss" data-tip-text="Aceder ao Tiny Tiny RSS" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                    <div class="large-25 medium-25 small-50">
+                        <a href="http://getprismatic.com">
+                            <img src="imgs/prismatic.png" alt="prismatic" data-tip-text="Aceder ao Prismatic" data-tip-where="down" data-tip-color="green">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ink-grid">
+        <br>
+        <p>
+            <small>Built with
+                <a href="http://ink.sapo.pt">Ink</a>.</small>
+        </p>
+    </div>
+
+
+    <script>
+        Ink.requireModules(['Ink.UI.Tooltip_1'], function (Tooltip) {
+            new Tooltip('img', {where: 'down'});
+        });
+    </script>
+
+    <script>
+        // There are two ways to run the code...
+        // 1 - If you know you have the component and its dependencies already loaded, just do:
+        var tabs = new Ink.UI.Tabs( '.ink-tabs',{
+        disabled: ['#stuff', '#more_stuff'],
+        active: '#item1',
+        onBeforeChange: function(tab){
+        console.log('beforeChange', tab);
+        },
+        onChange: function(tab){
+        console.log('Changed', tab);
+        }
+        });
+         
+        // 2 - If you're not sure the component or its dependencies are loaded at runtime, do:
+        Ink.requireModules( ['Ink.UI.Tabs_1'], function(Tabs){
+        new Tabs( '.ink-tabs',{
+        disabled: ['#stuff', '#more_stuff'],
+        active: '#item1',
+        onBeforeChange: function(tab){
+        console.log('beforeChange', tab);
+        },
+        onChange: function(tab){
+        console.log('Changed', tab);
+        }
+        });
+        });
+    </script>
+
+</body>
+
+</html>
